@@ -176,7 +176,11 @@ void loop () {
     }
 
     //===========================================<<START3 SCREEN>>===============================================
-    if(start_time_in_sec(array4) <= now_time_in_sec() && count2 == -1)
+    if(start_time_in_sec(array3) <= now_time_in_sec() && count2 == -1)
+    {
+      task4 = 1;
+    }
+    if(finsh_time_in_sec(array3) >= now_time_in_sec() && task4 == 1)
     {
       float var = temp_deg();
       if(var > 30)
@@ -211,7 +215,7 @@ void loop () {
     
 }
 
-void screen1()                  //====================SCREEN NUMBER OE===================
+void screen1()                  //====================SCREEN NUMBER ONE===================
 {
   DateTime now = rtc.now();
   lcd.setCursor(0,0);
@@ -370,9 +374,9 @@ void screen2()                   //====================SCREEN NUMBER TWO========
       }
       if(count2 == 8)
       {
-        if(array2[count2] > 1)
+        if(array2[count2] > 2)
         {
-          array2[count2] = 1;
+          array2[count2] = 2;
         }
       }
       if(count2 == 9)
